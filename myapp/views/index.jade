@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p
+ 
+
+  form(action="/", method="POST")
+    TEXTAREA(COLS="140" DIR="LTR" LANG="fr" PLACEHOLDER="Quoi de neuf ?", name='tweet')
+    p
+    Input(value="Mini tweeter" type="submit")
+
+  ul
+   - each tweet in tweets
+    li #{tweet.body} #{tweet.timestamp}
+
